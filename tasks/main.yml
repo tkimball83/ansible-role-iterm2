@@ -1,7 +1,7 @@
 ---
 - name: Install iTerm2 package
   tags: iterm2
-  homebrew_cask: name={{ itmer2_pkg|lower }}
+  homebrew_cask: name={{ iterm2_pkg|lower }}
                  state=present
   register: iterm2_homebrew_cask
   when: iterm2_pkg is defined

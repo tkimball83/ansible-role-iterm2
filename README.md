@@ -27,7 +27,7 @@ None
         - role: tkimball83.iterm2
           iterm2_plist:
             OnlyWhenMoreTabs:
-              type: int
+              type: string
               value: 0
             PromptOnQuit:
               type: bool

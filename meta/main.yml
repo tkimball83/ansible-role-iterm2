@@ -1,5 +1,6 @@
 ---
-dependencies: []
+dependencies:
+  - geerlingguy.homebrew
 galaxy_info:
   author: tkimball83
   description: macOS - Terminal Replacement

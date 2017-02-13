@@ -12,8 +12,8 @@ This role requires Homebrew and Homebrew Cask to be installed
 
 Available variables are listed below, along with default values:
 
-    iterm2_pkg: iterm2
-    iterm2_domain: "com.googlecode.{{ iterm2_pkg }}"
+    iterm2_pkg: iTerm2
+    iterm2_domain: "com.googlecode.{{ iterm2_pkg|lower }}"
     iterm2_plist: {}
 
 ## Dependencies

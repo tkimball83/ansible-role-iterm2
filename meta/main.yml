@@ -1,0 +1,15 @@
+---
+dependencies: []
+galaxy_info:
+  author: tkimball83
+  description: macOS - Terminal Replacement
+  license: BSD
+  min_ansible_version: 2.0
+  platforms:
+    - name: Darwin
+      versions: 
+        - all
+  galaxy_tags:
+    - iterm2
+    - macos
+    - osx

@@ -1,0 +1,4 @@
+---
+iterm2_pkg: iterm2
+iterm2_domain: "com.googlecode.{{ iterm2_pkg }}"
+iterm2_plist: {}

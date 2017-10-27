@@ -1,6 +1,7 @@
 ---
 - name: Ensure that the iterm2 package is installed
   tags: iterm2
+  become: true
   homebrew_cask:
     name: "{{ iterm2_pkg|lower }}"
     state: present
@@ -16,5 +17,10 @@
     type: "{{ item.value.type }}"
     value: "{{ item.value.value }}"
   with_dict: "{{ iterm2_plist }}"
-  when: iterm2_homebrew_cask|success
+  when:
+    - item2_domain is defined
+    - item.key is defined
+    - item.value.type is defined
+    - item.value.value is defined
+    - iterm2_homebrew_cask|success
 ...

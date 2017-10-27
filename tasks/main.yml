@@ -1,7 +1,6 @@
 ---
 - name: Ensure that the iterm2 package is installed
   tags: iterm2
-  become: true
   homebrew_cask:
     name: "{{ iterm2_pkg|lower }}"
     state: present

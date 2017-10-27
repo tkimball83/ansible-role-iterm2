@@ -17,7 +17,7 @@
     value: "{{ item.value.value }}"
   with_dict: "{{ iterm2_plist }}"
   when:
-    - item2_domain is defined
+    - iterm2_domain is defined
     - item.key is defined
     - item.value.type is defined
     - item.value.value is defined

@@ -15,7 +15,7 @@
     state: "{{ item.value.state|default('present') }}"
     type: "{{ item.value.type }}"
     value: "{{ item.value.value }}"
-  with_dict: "{{ iterm2_plist }}"
+  with_dict: "{{ iterm2_defaults }}"
   when:
     - iterm2_domain is defined
     - item.key is defined

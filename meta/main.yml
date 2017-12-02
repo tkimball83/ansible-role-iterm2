@@ -1,17 +1,14 @@
 ---
-dependencies:
-  - geerlingguy.homebrew
 galaxy_info:
   author: tkimball83
   description: macOS - Terminal Replacement
-  license: BSD
-  min_ansible_version: 2.0
+  license: GPLv3
+  min_ansible_version: 2.4
   platforms:
     - name: MacOSX
-      versions: 
+      versions:
         - all
   galaxy_tags:
     - iterm2
     - macos
-    - osx
 ...

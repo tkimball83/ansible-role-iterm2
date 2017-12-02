@@ -1,5 +1,5 @@
 ---
 iterm2_pkg: iTerm2
 iterm2_domain: "com.googlecode.{{ iterm2_pkg|lower }}"
-iterm2_plist: {}
+iterm2_defaults: {}
 ...

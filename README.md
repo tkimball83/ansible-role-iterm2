@@ -6,7 +6,7 @@ macOS - Terminal Replacement
 
 ## Requirements
 
-This role requires Homebrew and Homebrew Cask to be installed
+This role requires homebrew and homebrew cask to be installed
 
 ## Role Variables
 
@@ -14,18 +14,19 @@ Available variables are listed below, along with default values:
 
     iterm2_pkg: iTerm2
     iterm2_domain: "com.googlecode.{{ iterm2_pkg|lower }}"
-    iterm2_plist: {}
+    iterm2_defaults: {}
 
 ## Dependencies
 
-  * https://galaxy.ansible.com/geerlingguy/homebrew
+None
 
 ## Example Playbook
 
-    - hosts: servers
+    - hosts: localhost
+      connection: local
       roles:
         - role: tkimball83.iterm2
-          iterm2_plist:
+          iterm2_defaults:
             OnlyWhenMoreTabs:
               type: string
               value: 0
@@ -35,7 +36,7 @@ Available variables are listed below, along with default values:
 
 ## License
 
-BSD
+GPLv3
 
 ## Author Information
 

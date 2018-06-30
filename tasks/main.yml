@@ -1,13 +1,12 @@
 ---
-- name: Ensure that the iterm2 package is installed
+- name: Ensure that the {{ iterm2_package }} package is installed
   tags: iterm2
   homebrew_cask:
-    name: "{{ iterm2_pkg|lower }}"
+    name: "{{ iterm2_package|lower }}"
     state: present
   register: iterm2_homebrew_cask
-  when: iterm2_pkg is defined
 
-- name: Applying iterm2 configurations
+- name: Attempting to apply {{ iterm2_package }} configurations
   tags: iterm2
   osx_defaults:
     domain: "{{ iterm2_domain }}"
@@ -17,9 +16,9 @@
     value: "{{ item.value.value }}"
   with_dict: "{{ iterm2_defaults }}"
   when:
-    - iterm2_domain is defined
     - item.key is defined
     - item.value.type is defined
     - item.value.value is defined
-    - iterm2_homebrew_cask|success
+    - iterm2_defaults|length > 0
+    - iterm2_homebrew_cask is success
 ...

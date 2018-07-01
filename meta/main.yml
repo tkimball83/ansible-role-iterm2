@@ -1,6 +1,7 @@
 ---
 dependencies: []
 galaxy_info:
+  role_name: iterm2
   author: tkimball83
   description: macOS - Terminal Replacement
   license: GPLv3

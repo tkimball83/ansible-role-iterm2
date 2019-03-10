@@ -14,7 +14,7 @@ This role requires homebrew and homebrew cask to be installed
 
 Available variables are listed below, along with default values:
 
-    iterm2_defaults: {}
+    iterm2_defaults: []
     iterm2_domain: "com.googlecode.{{ iterm2_package|lower }}"
     iterm2_package: iTerm2
 
@@ -29,10 +29,10 @@ None
       roles:
         - role: tkimball83.iterm2
           iterm2_defaults:
-            OnlyWhenMoreTabs:
+            - name: OnlyWhenMoreTabs
               type: string
               value: 0
-            PromptOnQuit:
+            - name: PromptOnQuit
               type: bool
               value: false
 

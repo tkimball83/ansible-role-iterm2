@@ -4,21 +4,23 @@
   homebrew_cask:
     name: "{{ iterm2_package|lower }}"
     state: present
-  register: iterm2_homebrew_cask
+  when: iterm2_package|length > 0
 
 - name: Attempting to apply {{ iterm2_package }} configurations
   tags: iterm2
   osx_defaults:
     domain: "{{ iterm2_domain }}"
-    key: "{{ item.key|regex_replace('_', ' ') }}"
-    state: "{{ item.value.state|default('present') }}"
-    type: "{{ item.value.type }}"
-    value: "{{ item.value.value }}"
-  with_dict: "{{ iterm2_defaults }}"
+    key: "{{ item.name }}"
+    state: "{{ item.state|default('present') }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  loop: "{{ iterm2_defaults }}"
+  loop_control:
+    label: "{{ item.name }}"
   when:
-    - item.key is defined
-    - item.value.type is defined
-    - item.value.value is defined
+    - item.name is defined
+    - item.type is defined
+    - item.value is defined
     - iterm2_defaults|length > 0
-    - iterm2_homebrew_cask is success
+    - iterm2_domain is defined
 ...
